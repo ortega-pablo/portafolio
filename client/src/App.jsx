@@ -1,14 +1,16 @@
-import Home from "./components/Home"
-import NavBar from "./components/NavBar"
-import SocialNav from "./components/SocialNav"
+import About from './components/About'
+import Home from './components/Home'
+import NavBar from './components/NavBar'
+import SocialNav from './components/SocialNav'
 
 function App() {
 	return (
 		<div>
-			<NavBar/>
-			<Home/>
+			<NavBar />
+			<Home />
+			<About />
 
-			<SocialNav/>
+			<SocialNav />
 		</div>
 	)
 }

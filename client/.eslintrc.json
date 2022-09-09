@@ -7,8 +7,7 @@
 		"plugin:react/recommended",
 		"airbnb",
 		"prettier",
-		"plugin:react/jsx-runtime",
-		"jsx-a11y"
+		"plugin:react/jsx-runtime"
 	],
 	"overrides": [],
 	"parserOptions": {
