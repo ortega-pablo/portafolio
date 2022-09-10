@@ -6,9 +6,9 @@ function About() {
 		>
 			<div className='container w-full max-w-screen-lg px-10 mx-auto flex flex-col justify-center text-white'>
 				<div className='pb-8'>
-					<p className='text-4xl font-bold inline border-b-4 border-blue-500'>
+					<h2 className='text-4xl font-bold inline border-b-4 border-blue-500'>
 						Sobre mí
-					</p>
+					</h2>
 				</div>
 				<p className='text-xl mt-20'>
 					Me considero una persona dinámica, proactiva, completamente apasionada
