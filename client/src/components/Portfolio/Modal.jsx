@@ -1,6 +1,11 @@
+import { MdOutlinePreview } from 'react-icons/md'
+import { SiGithub } from 'react-icons/si'
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import { RiCloseLine } from 'react-icons/ri'
 
-function Modal({ setIsOpen }) {
+function Modal({ setIsOpen, project }) {
 	const handleClose = e => {
 		if (e.target.id === 'container') {
 			setIsOpen(false)
@@ -11,28 +16,61 @@ function Modal({ setIsOpen }) {
 		<div
 			id='container'
 			onClick={e => handleClose(e)}
-			className='fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex justify-center items-center '
+			className='fixed flex justify-center items-center inset-0 bg-black bg-opacity-70 backdrop-blur-sm  '
 		>
-			<div className='bg-white'>
-				<div className=''>
-					<div>
-						<h5>Dialog</h5>
-					</div>
+			<div className='container flex flex-col mx-6 max-w-xl p-4 gap-4 bg-gray-900'>
+				<div className='flex flex-row justify-between'>
+					<h2 className='text-3xl'>{project.name}</h2>
 					<button type='button' onClick={() => setIsOpen(false)}>
-						<RiCloseLine style={{ marginBottom: '-3px' }} />
+						<RiCloseLine />
 					</button>
-					<div>Are you sure you want to delete the item?</div>
+				</div>
 
-					<div>
-						<div>
-							<button type='button' onClick={() => setIsOpen(false)}>
-								Delete
-							</button>
-							<button type='button' onClick={() => setIsOpen(false)}>
-								Cancel
-							</button>
-						</div>
-					</div>
+				<div>
+					<img
+						src={project.images[0]}
+						alt=''
+						className='rounded-md duration-200 hover:scale-110 w-full py-2'
+					/>
+				</div>
+
+				<div>
+					<p>{project.description}</p>
+				</div>
+
+				<div className='flex'>
+					<h5 className='font-semibold'>Frontend:&nbsp;</h5>
+					<p>{project.front}</p>
+				</div>
+
+				<div className='flex'>
+					<h5 className='font-semibold'>Backend:&nbsp;</h5>
+					<p>{project.back}</p>
+				</div>
+
+				<div className='flex'>
+					<h5 className='font-semibold'>DataBase:&nbsp;</h5>
+					<p>{project.db}</p>
+				</div>
+
+				<div className='flex'>
+					<h5 className='font-semibold'>Otras:&nbsp;</h5>
+					<p>{project.other}</p>
+				</div>
+
+				<div className='flex items-center justify-center w-full h-10 sm:col-span-1 sm:col-start-2 '>
+					<a
+						className=' flex flex-row items-center justify-center z-5 w-1/2 px-6 py-3 m-4 duration-200 text-gray-400 hover:scale-110 hover:text-white'
+						href={project.page}
+					>
+						Demo <MdOutlinePreview className=' ml-4 ' />
+					</a>
+					<a
+						className=' flex flex-row items-center justify-center z-5 w-1/2 px-6 py-3 m-4 duration-200 text-gray-400 hover:scale-110 hover:text-white '
+						href={project.repository}
+					>
+						Código <SiGithub className=' ml-4 ' />
+					</a>
 				</div>
 			</div>
 		</div>

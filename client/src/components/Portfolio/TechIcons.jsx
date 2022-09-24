@@ -15,7 +15,7 @@ import {
 
 function TechIcons({ technologies, size }) {
 	return (
-		<>
+		<div className='flex flex-row justify-center gap-1'>
 			{technologies.includes('Html5') && (
 				<div className='text-white '>
 					<SiHtml5 size={size} />
@@ -76,7 +76,7 @@ function TechIcons({ technologies, size }) {
 					<SiGithub size={size} />
 				</div>
 			)}
-		</>
+		</div>
 	)
 }
 export default TechIcons

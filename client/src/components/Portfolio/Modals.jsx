@@ -1,43 +1,47 @@
 import { useState } from 'react'
-import { MdOutlinePreview } from 'react-icons/md'
-import { SiGithub } from 'react-icons/si'
+
 import Modal from './Modal'
+import TechIcons from './TechIcons'
 
 function Modals({ project }) {
 	const [isOpen, setIsOpen] = useState(false)
 	return (
 		<section
 			key={project.id}
-			className=' flex flex-col items-center justify-center shadow-md bg-stone-900 shadow-stone-600 rounded-lg'
+			className=' shadow-md max-w-xs bg-stone-900 shadow-stone-700 rounded-lg sm:max-w-xl md:max-w-2xl xl:max-w-4xl'
 		>
-			<button type='button' onClick={() => setIsOpen(true)}>
-				<h3 className=' py-2 text-xl '>{project.name}</h3>
+			<button
+				type='button'
+				onClick={() => setIsOpen(true)}
+				className=' grid  items-center content-center sm:grid-cols-2 sm:grid-rows-7'
+			>
+				<div className='  py-2 sm:col-span-2 sm:row-span-1'>
+					<h3 className=' text-xl '>{project.name}</h3>
+				</div>
 
+				<div className=' sm:row-span-6 '>
 				<img
 					src={project.images[0]}
 					alt=''
-					className='rounded-md duration-200 hover:scale-110 w-full'
+					className='rounded-md duration-200 hover:scale-110 w-full py-2'
 				/>
-
-				<div className=' py-2 px-2 text-center text-gray-500 '>
-					{project.resume}
 				</div>
+
+				<div className=' py-2 px-2 text-center text-gray-400 sm:col-span-1 sm:col-start-2 sm:row-span-3'>
+					<p>{project.resume}</p>
+				</div>
+
+				<div className=' py-2 px-2 text-gray-400 sm:hidden '>
+					<TechIcons technologies={project.technologies} size={24} />
+				</div>
+
+				<div className=' hidden py-2 px-2 text-gray-400 sm:inline sm:col-span-1 sm:col-start-2 sm:row-span-2'>
+					<TechIcons technologies={project.technologies} size={30} />
+				</div>
+
+				
 			</button>
 			{isOpen && <Modal setIsOpen={setIsOpen} project={project} />}
-			<div className='flex items-center justify-center w-full h-10'>
-				<a
-					className=' flex flex-row items-center justify-center w-1/2 px-6 py-3 m-4 duration-200 text-gray-500 hover:scale-110 hover:text-white'
-					href={project.page}
-				>
-					Demo <MdOutlinePreview className=' ml-4 ' />
-				</a>
-				<a
-					className=' flex flex-row items-center justify-center w-1/2 px-6 py-3 m-4 duration-200 text-gray-500 hover:scale-110 hover:text-white '
-					href={project.repository}
-				>
-					Código <SiGithub className=' ml-4 ' />
-				</a>
-			</div>
 		</section>
 	)
 }

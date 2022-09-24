@@ -19,7 +19,7 @@ function Portfolio() {
 					</p>
 				</div>
 
-				<div className=' grid justyfy-center gap-8 px-6 '>
+				<div className=' grid justify-items-center justyfy-center gap-8 px-6 '>
 					{projects.map(project => (
 						<Modals project={project} />
 					))}
