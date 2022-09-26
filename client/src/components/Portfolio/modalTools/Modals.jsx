@@ -30,12 +30,12 @@ function Modals({ project }) {
 				<div className=' py-2 px-2 text-center text-gray-400 sm:col-span-1 sm:col-start-2 sm:row-span-3'>
 					<p>{project.resume}</p>
 				</div>
-
-				<div className=' py-2 px-2 text-gray-400 sm:hidden '>
+				
+				<div className=' flex justify-center flex-wrap max-w-full gap-8 py-2 px-2 text-gray-400 sm:hidden '>
 					<TechIcons technologies={project.technologies} size={24} />
 				</div>
 
-				<div className=' hidden py-2 px-2 text-gray-400 sm:inline sm:col-span-1 sm:col-start-2 sm:row-span-3'>
+				<div className=' hidden py-2 px-2 text-gray-400 sm:flex sm:justify-center sm:flex-wrap sm:max-w-full sm:gap-6 sm:col-span-1 sm:col-start-2 sm:row-span-3'>
 					<TechIcons technologies={project.technologies} size={30} />
 				</div>
 

@@ -10,7 +10,7 @@ const projects = [
 		],
 		resume: 'Ecommerce - proyecto final de estudios (Soy Henry)',
 		description: 'large description Ecommerce - proyecto final de estudios (Soy Henry)',
-		technologies: 'Html5, CssThree',
+		technologies: 'HTML5, CSS3, React, Redux, Node Js, Express, PostgreSQL, Material UI, Styled Components, Javascript, Sequelize, Git',
 		front: 'front technologies',
 		back: 'back technologies',
 		db: 'data base technologies',

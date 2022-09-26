@@ -7,9 +7,9 @@ function Portfolio() {
 	return (
 		<section
 			name='portfolio'
-			className='bg-gradient-to-b pt-20 from-black to-gray-800 w-full  text-white'
+			className='w-full min-h-screen flex items-center justify-center py-20 bg-gradient-to-b from-black via-black to-gray-800'
 		>
-			<div className='max-w-screen-lg py-4 mx-auto flex flex-col justify-center w-full h-full'>
+			<div className='container w-full max-w-screen-lg px-10 mx-auto flex flex-col justify-center text-white'>
 				<div className='pb-8'>
 					<h2 className='text-4xl font-bold inline border-b-4 border-blue-500'>
 						Portafolio

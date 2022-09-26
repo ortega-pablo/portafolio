@@ -17,14 +17,14 @@ function NavBar() {
 			view: 'Acerca de mí',
 		},
 		{
+			id: 4,
+			link: 'technologies',
+			view: 'Tecnologías',
+		},
+		{
 			id: 3,
 			link: 'portfolio',
 			view: 'Portafolio',
-		},
-		{
-			id: 4,
-			link: 'experience',
-			view: 'Experiencia',
 		},
 		{
 			id: 5,
