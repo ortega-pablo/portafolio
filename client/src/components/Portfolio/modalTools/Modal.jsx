@@ -4,6 +4,7 @@ import { SiGithub } from 'react-icons/si'
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import { RiCloseLine } from 'react-icons/ri'
+import Carousel from '../../../Utils/Carousel'
 
 function Modal({ setIsOpen, project }) {
 	const handleClose = e => {
@@ -18,7 +19,7 @@ function Modal({ setIsOpen, project }) {
 			onClick={e => handleClose(e)}
 			className='fixed flex justify-center items-center inset-0 bg-black bg-opacity-70 backdrop-blur-sm  '
 		>
-			<div className='container flex flex-col mx-6 max-w-xl p-4 gap-4 bg-gray-900'>
+			<div className='container flex flex-col mx-6 max-w-xl p-4 gap-4 bg-neutral-800 rounded-xl'>
 				<div className='flex flex-row justify-between'>
 					<h2 className='text-3xl'>{project.name}</h2>
 					<button type='button' onClick={() => setIsOpen(false)}>
@@ -26,12 +27,13 @@ function Modal({ setIsOpen, project }) {
 					</button>
 				</div>
 
-				<div>
-					<img
+				<div className='overflow-hidden'>
+					<Carousel images={project.images} />
+					{/* <img
 						src={project.images[0]}
 						alt=''
-						className='rounded-md duration-200 hover:scale-110 w-full py-2'
-					/>
+						className='rounded-md  w-full py-2'
+					/> */}
 				</div>
 
 				<div>
@@ -39,22 +41,22 @@ function Modal({ setIsOpen, project }) {
 				</div>
 
 				<div className='flex'>
-					<h5 className='font-semibold'>Frontend:&nbsp;</h5>
+					<h5 className='font-bold'>Frontend:&nbsp;</h5>
 					<p>{project.front}</p>
 				</div>
 
 				<div className='flex'>
-					<h5 className='font-semibold'>Backend:&nbsp;</h5>
+					<h5 className='font-bold'>Backend:&nbsp;</h5>
 					<p>{project.back}</p>
 				</div>
 
 				<div className='flex'>
-					<h5 className='font-semibold'>DataBase:&nbsp;</h5>
+					<h5 className='font-bold'>DataBase:&nbsp;</h5>
 					<p>{project.db}</p>
 				</div>
 
 				<div className='flex'>
-					<h5 className='font-semibold'>Otras:&nbsp;</h5>
+					<h5 className='font-bold'>Otras:&nbsp;</h5>
 					<p>{project.other}</p>
 				</div>
 

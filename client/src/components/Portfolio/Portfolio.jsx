@@ -1,7 +1,7 @@
 /* import { MdOutlinePreview } from "react-icons/md";
 import { SiGithub } from "react-icons/si"; */
-import Modals from './Modals'
-import projects from './projects'
+import Modals from './modalTools/Modals'
+import projects from './modalTools/projects'
 
 function Portfolio() {
 	return (
@@ -19,7 +19,7 @@ function Portfolio() {
 					</p>
 				</div>
 
-				<div className=' grid justify-items-center justyfy-center gap-8 px-6 '>
+				<div className=' grid justify-items-center justyfy-center gap-12 px-6 '>
 					{projects.map(project => (
 						<Modals project={project} />
 					))}

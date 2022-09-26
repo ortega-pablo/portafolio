@@ -13,7 +13,7 @@ import {
 	SiStyledcomponents,
 } from 'react-icons/si'
 
-function TechIcons({ technologies, size }) {
+function TechIcons({ technologies, size, withText=false }) {
 	return (
 		<div className='flex flex-row justify-center gap-1'>
 			{technologies.includes('Html5') && (
