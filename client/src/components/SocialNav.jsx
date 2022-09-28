@@ -50,11 +50,11 @@ function SocialNav() {
 				{socialButtons.map(button => (
 					<li
 						key={button.id}
-						className={`flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-5px] hover:rounded-md duration-300 bg-gray-800 ${button.style}`}
+						className={`flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-5px] hover:rounded-md duration-300 bg-bgDark-2 ${button.style}`}
 					>
 						<a
 							href={button.href ? button.href : '/'}
-							className='flex justify-between items-center w-full text-blue-600'
+							className='flex justify-between items-center w-full text-primary-1'
 							download={button.download}
 							target='_blank'
 							rel='noreferrer'

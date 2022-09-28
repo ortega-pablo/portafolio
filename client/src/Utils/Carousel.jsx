@@ -72,7 +72,7 @@ function Carousel({ images }) {
 					</div>
 				))}
 			</div>
-			<div className='absolute top-0 w-full h-full z-50 pointer-events-none'>
+			<div className='absolute top-0 w-full h-full z-50 pointer-events-none text-text-5'>
 				<button
 					type='button'
 					onClick={() => prev()}

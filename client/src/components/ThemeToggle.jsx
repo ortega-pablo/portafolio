@@ -28,8 +28,8 @@ function ThemeToggle() {
 	
 
 	return (
-		<div className='fixed top-0 left-1/2 w-full z-50 bg-transparent  '>
-			<span onClick={() => handleThemeSwitch()}>{theme === 'light' ? (<MdDarkMode />) : (<MdLightMode />)}</span>
+		<div className='fixed top-24 right-2 z-50 bg-transparent text-primary-2 dark:text-primary-1'>
+			<span onClick={() => handleThemeSwitch()}>{theme === 'light' ? (<MdDarkMode size={24}/>) : (<MdLightMode size={24}/>)}</span>
 		</div>
 	)
 }

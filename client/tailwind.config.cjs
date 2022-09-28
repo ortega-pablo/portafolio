@@ -17,8 +17,8 @@ module.exports = {
 					2: '#001f54',
 				},
 				'bgLight': {
-					1: '#f4f3ee',
-					2: '#fff0eb',
+					1: '#fff0ef',
+					2: '#FDEEDD',
 				},
 				'primary': {
 					1: '#0466c8',
@@ -31,6 +31,7 @@ module.exports = {
 					4: '#4c5c68',
 					5: '#46494c',
 				},
+
 			},
 		},
 		fontFamily: {
