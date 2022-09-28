@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2'
 
 
 function Contact() {
@@ -7,8 +8,31 @@ function Contact() {
 
 	const sendEmail = e => {
 		e.preventDefault()
+		Swal.fire({
+			title: '¿Enviar mensaje?',
+			icon: 'question',
+			color: '#c5c3c6',
+			background: '#001f54',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Enviar',
+			cancelButtonText: 'Cancelar'
+		  }).then((result) => {
+			if (result.isConfirmed) {
+				emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY)
+				.then()
+					Swal.fire({
+					title: 'Mensaje enviado correctamente',
+					color: '#c5c3c6',
+					background: '#001f54',
+					icon: 'success',
+				  })
+				e.target.reset()
+			}
+		  })
+
 		
-		emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY)
 	}
 
 	return (
@@ -26,11 +50,11 @@ function Contact() {
 				<div className=' bg-bgDark-2 rounded-xl shadow-lg p-8 text-text-2 md:w-80 dark:bg-bgLight-2 dark:text-text-4'>
 					<form ref={form} onSubmit={sendEmail} className='flex flex-col space-y-4'>
 						<h5>Nombre :</h5>
-						<input type='text' name='user_name' placeholder='Introduce tu nombre.' className='ring-1 ring-primary-1 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-primary-1 dark:ring-primary-2 dark:focus:ring-primary-2'/>
+						<input type='text' name='user_name' placeholder='Introduce tu nombre.' required className='ring-1 ring-primary-1 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-primary-1 dark:ring-primary-2 dark:focus:ring-primary-2'/>
 						<h5>Email :</h5>
-						<input type='email' name='user_email' placeholder='Introduce tu email.' className='ring-1 ring-primary-1 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-primary-1 dark:ring-primary-2 dark:focus:ring-primary-2' />
+						<input type='email' name='user_email' placeholder='Introduce tu email.' required className='ring-1 ring-primary-1 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-primary-1 dark:ring-primary-2 dark:focus:ring-primary-2' />
 						<h5>Mensaje :</h5>
-						<textarea name='message' placeholder='Escribe tu mensaje.' className='ring-1 ring-primary-1 w-full h-40 rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-primary-1 dark:ring-primary-2 dark:focus:ring-primary-2' />
+						<textarea name='message' placeholder='Escribe tu mensaje.' required className='ring-1 ring-primary-1 w-full h-40 rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-primary-1 dark:ring-primary-2 dark:focus:ring-primary-2' />
 						<button type='submit' className='text-text-1 px-6 py-3 mb-10 flex items-center rounded-md bg-gradient-to-r from-primary-1 to-primary-2 cursor-pointer'>Enviar Mensaje</button>
 					</form>
 				</div>
