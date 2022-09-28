@@ -27,13 +27,13 @@ function Contact() {
 				<div className='flex justify-center md:pt-10'>
 				<div className=' bg-white rounded-xl shadow-lg p-8 text-gray-600 md:w-80 '>
 					<form ref={form} onSubmit={sendEmail} className='flex flex-col space-y-4'>
-						<h5>Nombre</h5>
+						<h5>Nombre :</h5>
 						<input type='text' name='user_name' placeholder='Introduce tu nombre.' className='ring-1 ring-blue-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-blue-300'/>
-						<h5>Email</h5>
+						<h5>Email :</h5>
 						<input type='email' name='user_email' placeholder='Introduce tu email.' className='ring-1 ring-blue-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-blue-300' />
-						<h5>Mensaje</h5>
+						<h5>Mensaje :</h5>
 						<textarea name='message' placeholder='Escribe tu mensaje.' className='ring-1 ring-blue-300 w-full h-40 rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-blue-300' />
-						<button type='submit'>Enviar</button>
+						<button type='submit' className='bg-blue-500 text-white font-bold rounded-lg px-6 py-2 mt-2'>Enviar Mensaje</button>
 					</form>
 				</div>
 				</div>

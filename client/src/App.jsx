@@ -1,5 +1,6 @@
 import About from './components/About'
 import Contact from './components/Contact'
+import ThemeToggle from './components/ThemeToggle'
 import Home from './components/Home'
 import NavBar from './components/NavBar'
 import Portfolio from './components/Portfolio/Portfolio'
@@ -9,6 +10,7 @@ import Technologies from './components/Technologies/Technologies'
 function App() {
 	return (
 		<div>
+			<ThemeToggle />
 			<NavBar />
 			<Home />
 			<About />
