@@ -1,7 +1,5 @@
 import { MdOutlinePreview } from 'react-icons/md'
 import { SiGithub } from 'react-icons/si'
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import { RiCloseLine } from 'react-icons/ri'
 import Carousel from '../../../Utils/Carousel'
@@ -14,6 +12,7 @@ function Modal({ setIsOpen, project }) {
 	}
 
 	return (
+		// eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
 		<div
 			id='container'
 			onClick={e => handleClose(e)}
@@ -22,7 +21,11 @@ function Modal({ setIsOpen, project }) {
 			<div className='container flex flex-col mx-6 max-w-xl p-4 gap-4 bg-bgDark-1 rounded-xl text-text-2 '>
 				<div className='flex flex-row justify-between '>
 					<h2 className='text-3xl'>{project.name}</h2>
-					<button type='button' onClick={() => setIsOpen(false)} className='duration-200 hover:scale-150 hover:text-text-1'>
+					<button
+						type='button'
+						onClick={() => setIsOpen(false)}
+						className='duration-200 hover:scale-150 hover:text-text-1'
+					>
 						<RiCloseLine />
 					</button>
 				</div>

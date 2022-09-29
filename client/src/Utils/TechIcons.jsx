@@ -11,6 +11,12 @@ import {
 	SiRedux,
 	SiSequelize,
 	SiStyledcomponents,
+	SiTailwindcss,
+	SiEslint,
+	SiPrettier,
+	SiSwagger,
+	SiMongodb,
+	SiMocha,
 } from 'react-icons/si'
 
 function TechIcons({ technologies, size, withText = 'false' }) {
@@ -67,7 +73,9 @@ function TechIcons({ technologies, size, withText = 'false' }) {
 			{technologies.includes('Styled Components') && (
 				<div className='flex flex-col gap-2 w-min items-center'>
 					<SiStyledcomponents size={size} />
-					{withText === 'true' && <p className='text-text-3'>Styled Components</p> }
+					{withText === 'true' && (
+						<p className='text-text-3'>Styled Components</p>
+					)}
 				</div>
 			)}
 			{technologies.includes('Javascript') && (
@@ -86,6 +94,42 @@ function TechIcons({ technologies, size, withText = 'false' }) {
 				<div className='flex flex-col gap-2 w-min items-center'>
 					<SiGit size={size} />
 					{withText === 'true' && <p className='text-text-3'>Git</p>}
+				</div>
+			)}
+			{technologies.includes('Tailwind') && (
+				<div className='flex flex-col gap-2 w-min items-center'>
+					<SiTailwindcss size={size} />
+					{withText === 'true' && <p className='text-text-3'>Tailwind</p>}
+				</div>
+			)}
+			{technologies.includes('Eslint') && (
+				<div className='flex flex-col gap-2 w-min items-center'>
+					<SiEslint size={size} />
+					{withText === 'true' && <p className='text-text-3'>Eslint</p>}
+				</div>
+			)}
+			{technologies.includes('Prettier') && (
+				<div className='flex flex-col gap-2 w-min items-center'>
+					<SiPrettier size={size} />
+					{withText === 'true' && <p className='text-text-3'>Prettier</p>}
+				</div>
+			)}
+			{technologies.includes('Swagger') && (
+				<div className='flex flex-col gap-2 w-min items-center'>
+					<SiSwagger size={size} />
+					{withText === 'true' && <p className='text-text-3'>Swagger</p>}
+				</div>
+			)}
+			{technologies.includes('Mongodb') && (
+				<div className='flex flex-col gap-2 w-min items-center'>
+					<SiMongodb size={size} />
+					{withText === 'true' && <p className='text-text-3'>Mongodb</p>}
+				</div>
+			)}
+			{technologies.includes('Mocha') && (
+				<div className='flex flex-col gap-2 w-min items-center'>
+					<SiMocha size={size} />
+					{withText === 'true' && <p className='text-text-3'>Mocha</p>}
 				</div>
 			)}
 		</>

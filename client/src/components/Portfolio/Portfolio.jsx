@@ -21,7 +21,7 @@ function Portfolio() {
 
 				<div className=' grid justify-items-center justyfy-center gap-12 px-6 '>
 					{projects.map(project => (
-						<Modals project={project} />
+						<Modals key={project.id} project={project} />
 					))}
 				</div>
 			</div>

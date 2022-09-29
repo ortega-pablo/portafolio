@@ -57,17 +57,17 @@ function Carousel({ images }) {
 			clearInterval(interval)
 		})
 		carousel.current.addEventListener('mouseleave', () => {
-            interval = setInterval(() => {
-                next()
-            }, 2000)
-        })
+			interval = setInterval(() => {
+				next()
+			}, 2000)
+		})
 	}, [])
 
 	return (
 		<div className='relative'>
 			<div ref={carousel} className='flex flex-nowrap z-40'>
 				{images.map(image => (
-					<div className='overflow-hidden min-w-full'>
+					<div key={image} className='overflow-hidden min-w-full'>
 						<img src={image} alt='' className='w-full align-top' />
 					</div>
 				))}

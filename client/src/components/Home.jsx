@@ -1,6 +1,8 @@
 import { HiArrowNarrowRight } from 'react-icons/hi'
 import { Link } from 'react-scroll'
-import HeroImage from '../assets/Captura de pantalla 2022-08-13 113149.png'
+import HeroImage from '../assets/images/Imagen2.png'
+
+
 
 function Home() {
 	return (
