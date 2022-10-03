@@ -81,7 +81,7 @@ function Contact() {
 							/>
 							<button
 								type='submit'
-								className='text-text-1 px-6 py-3 mb-10 flex items-center rounded-md bg-gradient-to-r from-primary-1 to-primary-2 cursor-pointer'
+								className='text-text-1 px-6 py-3 mb-10 flex justify-center items-center rounded-md bg-gradient-to-r from-primary-1 to-primary-2 cursor-pointer'
 							>
 								Enviar Mensaje
 							</button>

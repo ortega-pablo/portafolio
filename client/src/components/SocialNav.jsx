@@ -39,7 +39,7 @@ function SocialNav() {
 				</>
 			),
 			style: 'rounded-br-md',
-			href: '../assets/docs/Curriculum Pablo Ortega.pdf',
+			href: 'https://drive.google.com/u/0/uc?id=1i3LTzmuZ7PSBzN_7x3dbQKtYBr6j7TM3&export=download',
 			download: true,
 		},
 	]
