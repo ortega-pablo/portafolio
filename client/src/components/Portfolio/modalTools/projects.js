@@ -21,7 +21,7 @@ const projects = [
 		db: 'PostgreSQL - Sequelize',
 		other:
 			'JWT - Stripe - Google Authentication - Multer - Git - Github - Nodemailer - Formik - Sweetalert',
-		page: 'https://final-project-beryl.vercel.app/',
+		page: 'https://vimeo.com/719112521',
 		repository: 'https://github.com/ortega-pablo/Final-Project',
 	},
 	{
