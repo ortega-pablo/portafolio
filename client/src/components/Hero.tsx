@@ -2,7 +2,8 @@ import HeroCanvas from './HeroCanvas'
 import Counter from './Counter'
 import { stats } from '../data/content'
 
-const cvUrl = import.meta.env.VITE_CV_URL
+// The PDF in public/cv/ is the default; VITE_CV_URL can point to an external copy instead.
+const cvUrl = import.meta.env.VITE_CV_URL || '/cv/Pablo_Ortega_CV.pdf'
 
 export default function Hero() {
 	return (
@@ -32,26 +33,14 @@ export default function Hero() {
 					<a href='#experiencia' className='btn btn-ghost'>
 						Mi trayectoria
 					</a>
-					{cvUrl ? (
-						<a
-							href={cvUrl}
-							className='btn btn-ghost'
-							target='_blank'
-							rel='noreferrer'
-						>
-							Descargar CV
-						</a>
-					) : (
-						<a
-							href='#'
-							className='btn btn-disabled'
-							title='Disponible cuando el CV quede publicado en un link externo'
-							aria-disabled='true'
-							onClick={e => e.preventDefault()}
-						>
-							Descargar CV
-						</a>
-					)}
+					<a
+						href={cvUrl}
+						className='btn btn-ghost'
+						target='_blank'
+						rel='noreferrer'
+					>
+						Descargar CV
+					</a>
 				</div>
 
 				<div className='stat-strip'>

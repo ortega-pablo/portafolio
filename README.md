@@ -22,7 +22,7 @@ Sirve en [http://localhost:5173](http://localhost:5173).
 
 Copiar `client/.env.example` a `client/.env` y completar:
 
-- `VITE_CV_URL` — link público de descarga del CV. Si queda vacío, el botón "Descargar CV" no se muestra.
+- `VITE_CV_URL` — link externo opcional para el botón "Descargar CV". Si queda vacío, el botón descarga `client/public/cv/Pablo_Ortega_CV.pdf`, que se reemplaza con cada versión nueva del CV.
 
 ## Build de producción
 
