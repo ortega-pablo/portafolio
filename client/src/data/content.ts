@@ -1,7 +1,7 @@
 export const stats = [
 	{ value: 3, suffix: '+', label: 'AÑOS LIDERANDO IT' },
 	{ value: 6, suffix: '', label: 'PERSONAS EN EL EQUIPO HOY' },
-	{ value: 9, suffix: '', label: 'SISTEMAS PRODUCTIVOS' },
+	{ value: 9, suffix: '', label: 'SISTEMAS PRODUCTIVOS A LA VEZ' },
 	{ value: 6, suffix: '+', label: 'AÑOS COMO COFUNDADOR' },
 ]
 
@@ -13,13 +13,13 @@ export const proofPoints = [
 	},
 	{
 		eyebrow: 'PRODUCCIÓN',
-		title: 'Nueve sistemas bajo responsabilidad',
+		title: 'Hasta nueve sistemas a cargo',
 		body: 'Productos web, identidad, backoffices, CRM y cloud — algunos con aplicaciones que se comunican con dispositivos físicos.',
 	},
 	{
 		eyebrow: 'EJECUCIÓN',
-		title: 'De horas de espera a un uso fluido',
-		body: 'Remediación de performance en un servicio productivo crítico de Tu Casa en Cuotas.',
+		title: 'De 17 minutos a 5 segundos',
+		body: 'Remediación de performance en un servicio productivo crítico de Tu Casa en Cuotas, medida en pruebas con datos reales.',
 	},
 ]
 
@@ -54,14 +54,14 @@ export const pipelineSteps = [
 export const solveCards = [
 	{
 		eyebrow: 'IDENTIDAD',
-		title: 'Responsable único del proveedor de identidad del grupo',
-		body: 'OAuth2/OIDC en .NET. Sobre este servicio inician sesión los demás sistemas, así que su disponibilidad es la de todos.',
-		tags: '.NET · OAuth2/OIDC · JWT',
+		title: 'SSO sobre una plataforma que no era mía',
+		body: 'Inicio de sesión único para un campus Moodle: Keycloak federado contra el backend de seguridad que ya existía y OIDC en Moodle, con un plugin propio que asigna los roles. Salió a producción en la fecha comprometida.',
+		tags: 'Keycloak · OIDC · Moodle',
 	},
 	{
 		eyebrow: 'PERFORMANCE',
-		title: 'De horas de espera a un uso fluido',
-		body: 'Remediación de performance en Tu Casa en Cuotas: un servicio productivo que tardaba horas en responder, hoy se usa con fluidez.',
+		title: 'De 17 minutos a 5 segundos',
+		body: 'Remediación de performance en Tu Casa en Cuotas, un servicio productivo que tardaba minutos u horas en responder: en pruebas con datos reales, el peor caso pasó de 17 minutos a 5 segundos, y en producción volvió a un uso normal.',
 		tags: 'Diagnóstico · optimización · producción',
 	},
 	{
@@ -73,7 +73,7 @@ export const solveCards = [
 	{
 		eyebrow: 'IA APLICADA',
 		title: 'Un agente que propone, una persona aprueba',
-		body: 'Extracción de datos de PDF y Excel para automatizar compras y licitaciones. El agente presenta el resultado; la decisión final siempre es humana.',
+		body: 'POC de automatización de compras y licitaciones: un motor de IA interpreta presupuestos de proveedores en PDF, Excel o Word y propone; la decisión final siempre es humana. Cada cambio se mide contra un set de 76 ofertas reales.',
 		tags: 'Claude API · PDF/Excel · aprobación humana',
 	},
 ]
@@ -93,9 +93,12 @@ export const timeline: TimelineItem[] = [
 		bullets: [
 			'Formé y lideré un equipo de hasta 12 desarrolladores (staffing con Incluit); hoy coordino un equipo estable de 6.',
 			'Lideré el desarrollo de Plan Mi Casa, una plataforma de ahorro e inversión inmobiliaria, entregada y en producción sobre AWS.',
-			'Responsable único del proveedor de identidad interno del grupo y del mantenimiento de sistemas críticos en producción, incluida una remediación de performance que llevó un servicio de horas de espera a un uso fluido.',
+			'Lideré técnicamente, junto a Consensus, la integración de un campus Moodle con SSO (Keycloak, OIDC) sobre una plataforma SaaS educativa de terceros; salió a producción en la fecha comprometida.',
+			'Lidero técnicamente y desarrollo Durrieu, la plataforma de una casa de comisiones ganadera: en producción sobre AWS y en desarrollo continuo, con un bot de Telegram y WhatsApp que da de alta pedidos conversando.',
+			'Entre 2024 y 2026 fui responsable único del mantenimiento de los sistemas legacy de Grupo ZAG, incluido su proveedor de identidad, y resolví una lentitud severa en Tu Casa en Cuotas: el peor caso pasó de 17 minutos a 5 segundos en pruebas con datos reales.',
+			'Co-lidero técnicamente un POC de automatización de compras con IA (Claude API), con aprobación humana obligatoria.',
 			'Desarrollé, junto al equipo formado por Incluit, aplicaciones que se comunican con dispositivos por Bluetooth, NFC y puerto serie (Veco, Vitaance, ASP NFC); y en solitario, Velos, control de un dron acuático por Bluetooth.',
-			'Diseñé un challenge técnico propio para evaluar candidatos, y organizo instancias internas de capacitación para el equipo.',
+			'Diseñé el challenge técnico y el protocolo de evaluación con el que incorporamos a un desarrollador, y construí el marketplace interno de Claude Code del equipo.',
 		],
 	},
 	{
@@ -112,8 +115,8 @@ export const timeline: TimelineItem[] = [
 		company: 'Freelance independiente',
 		role: 'Full Stack Developer',
 		bullets: [
-			'Construyo Price Lenz, un SaaS de price intelligence para consumo masivo en LATAM.',
-			'Construyo PromoTracking, un sistema de monitoreo de promociones con orquestación por IA, en producción.',
+			'Construyo Price Lenz, mi propio SaaS de price intelligence para consumo masivo en LATAM, todavía en desarrollo.',
+			'Desarrollo para un cliente PromoTracking, que monitorea promociones en e-commerce y redes sociales con IA, en producción sobre AWS.',
 		],
 	},
 ]
@@ -138,13 +141,13 @@ export const projects: Project[] = [
 		name: 'PromoTracking',
 		status: 'live',
 		statusLabel: 'EN PRODUCCIÓN',
-		body: 'Sistema de microservicios que automatiza el monitoreo y análisis de promociones en e-commerce y redes sociales, con orquestación por IA. Evolucionando hacia una plataforma unificada.',
+		body: 'Desarrollado para un cliente: microservicios en producción sobre AWS que monitorean y analizan promociones en cientos de e-commerce y en redes sociales con IA, más el dashboard para el cliente final.',
 		chips: ['FastAPI', 'Playwright', 'Next.js', 'PostgreSQL'],
 	},
 	{
 		name: 'Plan Mi Casa',
-		status: 'done',
-		statusLabel: 'ENTREGADO',
+		status: 'live',
+		statusLabel: 'ENTREGADO · EN PRODUCCIÓN',
 		body: 'Plataforma de ahorro e inversión inmobiliaria que lideré técnicamente: gestión de suscriptores, cuentas y planes, entregada y en producción.',
 		chips: ['FastAPI', 'SQLAlchemy', 'React', 'AWS'],
 	},
@@ -159,15 +162,17 @@ export type SystemCard = {
 export const systems: SystemCard[] = [
 	{
 		name: 'Campus Moodle',
-		body: 'Integración de un campus sobre una plataforma SaaS educativa existente: backend, frontend, datos e infraestructura en Azure.',
+		tag: 'ENTREGADO · EN PRODUCCIÓN',
+		body: 'Integración con SSO (Keycloak, OIDC) sobre una plataforma SaaS educativa de terceros, en Azure. Salió a producción en la fecha comprometida.',
 	},
 	{
-		name: 'Plataforma agroganadera',
-		body: 'Intermediación con bot conversacional, desplegada sobre AWS.',
+		name: 'Durrieu',
+		tag: 'EN PRODUCCIÓN Y DESARROLLO',
+		body: 'Plataforma de una casa de comisiones ganadera que lidero técnicamente y desarrollo: Faena e Invernada, comisiones y liquidaciones, con un bot de Telegram y WhatsApp. Sobre AWS.',
 	},
 	{
 		name: 'Grupo ZAG',
-		body: 'Backoffices y CRM en PHP/Laravel y .NET — responsable único de su mantenimiento y soporte.',
+		body: 'Backoffices y CRM en PHP/Laravel y .NET — fui responsable único de su mantenimiento y soporte entre 2024 y 2026.',
 	},
 	{
 		name: 'Tienda Plastik',
@@ -177,7 +182,7 @@ export const systems: SystemCard[] = [
 	{
 		name: 'Veco',
 		tag: 'CON EQUIPO INCLUIT',
-		body: 'App móvil para el control de un robot vía red local.',
+		body: 'App para tablet que controla un dron terrestre de entrenamiento, con modo sin conexión.',
 	},
 	{
 		name: 'Vitaance',
@@ -258,14 +263,19 @@ export const education = [
 		status: '2022',
 	},
 	{
-		name: 'Diplomatura en Liderazgo',
+		name: 'Diplomatura en Competencias Gerenciales, Inteligencia Emocional y Liderazgo Ágil',
 		school: 'Universidad de Belgrano',
-		status: 'Completa',
+		status: '2025',
+	},
+	{
+		name: 'Administración de empresas',
+		school: 'Coderhouse',
+		status: '2026',
 	},
 	{
 		name: 'Ingeniería en Mecatrónica',
 		school: 'Universidad Nacional de Cuyo',
-		status: 'Cursada parcial',
+		status: '2015 — 2023 · Cursada parcial',
 	},
 ]
 
