@@ -275,7 +275,7 @@ export const education = [
 	{
 		name: 'Ingeniería en Mecatrónica',
 		school: 'Universidad Nacional de Cuyo',
-		status: '2015 — 2023 · Cursada parcial',
+		status: '2015 — 2021 · Cursada parcial',
 	},
 ]
 
