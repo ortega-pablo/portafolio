@@ -1,21 +1,15 @@
-import { links } from '../data/content'
+import { cvUrl } from '../data/content'
 
 export default function Footer() {
 	return (
 		<footer>
-			<div className='footer-inner'>
-				<span>
-					© {new Date().getFullYear()} Pablo Ortega — Mendoza, Argentina
+			<div className='wrap foot-in'>
+				<span suppressHydrationWarning>
+					© {new Date().getFullYear()} Pablo Ortega, Mendoza, Argentina
 				</span>
-				<div className='footer-links'>
-					<a href={`mailto:${links.email}`}>Email</a>
-					<a href={links.linkedin} target='_blank' rel='noreferrer'>
-						LinkedIn
-					</a>
-					<a href={links.github} target='_blank' rel='noreferrer'>
-						GitHub
-					</a>
-				</div>
+				<a href={cvUrl} target='_blank' rel='noreferrer'>
+					Descargar CV
+				</a>
 			</div>
 		</footer>
 	)

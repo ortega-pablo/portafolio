@@ -1,50 +1,31 @@
-import Reveal from './Reveal'
-import { stackGroups } from '../data/content'
+import type { CSSProperties } from 'react'
+import { alsoWorked, stackNote, strata } from '../data/content'
 
 export default function Stack() {
 	return (
-		<section className='alt' id='stack'>
-			<div className='section-inner'>
-				<div className='section-head'>
-					<div className='head-text'>
-						<span className='eyebrow'>HERRAMIENTAS</span>
-						<h2>Stack técnico</h2>
-						<p>
-							Lo que uso a diario, curado — no un inventario de todo lo que
-							alguna vez toqué.
-						</p>
-					</div>
-					<span className='section-mark'>(e)</span>
+		<section className='block' id='stack'>
+			<div className='wrap'>
+				<div className='head-row'>
+					<h2 className='h2'>Stack</h2>
 				</div>
-
-				<Reveal>
-					<div className='legend'>
-						<span>
-							<span className='dot core' /> núcleo diario
-						</span>
-						<span>
-							<span className='dot also' /> también trabajado
-						</span>
-					</div>
-				</Reveal>
-
-				<Reveal>
-					{stackGroups.map(group => (
-						<div className='stackgroup' key={group.title}>
-							<h4>{group.title}</h4>
-							<div className='chips'>
-								{group.chips.map(c => (
-									<span
-										className={`chip2 ${c.core ? 'core' : ''}`}
-										key={c.label}
-									>
-										{c.label}
-									</span>
-								))}
-							</div>
+				<p className='note'>{stackNote}</p>
+			</div>
+			<div className='strata'>
+				{strata.map((stratum, i) => (
+					<div
+						key={stratum.title}
+						className='stratum'
+						style={{ '--c': `var(--l${i + 1})` } as CSSProperties}
+					>
+						<div className='wrap'>
+							<h3>{stratum.title}</h3>
+							<p>{stratum.items}</p>
 						</div>
-					))}
-				</Reveal>
+					</div>
+				))}
+			</div>
+			<div className='wrap'>
+				<p className='also'>{alsoWorked}</p>
 			</div>
 		</section>
 	)

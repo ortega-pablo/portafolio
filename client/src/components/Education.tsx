@@ -1,29 +1,27 @@
-import Reveal from './Reveal'
-import { education } from '../data/content'
+import { education, languages } from '../data/content'
 
 export default function Education() {
 	return (
-		<section id='formacion'>
-			<div className='section-inner'>
-				<div className='section-head'>
-					<div className='head-text'>
-						<span className='eyebrow'>FORMACIÓN</span>
-						<h2>Educación</h2>
-					</div>
+		<section className='block wrap' id='formacion'>
+			<div className='head-row'>
+				<h2 className='h2'>Formación</h2>
+			</div>
+			<div className='study'>
+				<ul>
+					{education.map(item => (
+						<li key={item.name}>
+							<div>
+								<b>{item.name}</b>
+								<span>{item.school}</span>
+							</div>
+							<span className='when'>{item.date}</span>
+						</li>
+					))}
+				</ul>
+				<div className='langs'>
+					<h3>Idiomas</h3>
+					<p>{languages}</p>
 				</div>
-				<Reveal>
-					<ul className='edu-list'>
-						{education.map(e => (
-							<li key={e.name}>
-								<div>
-									<div className='ename'>{e.name}</div>
-									<div className='eschool'>{e.school}</div>
-								</div>
-								<div className='estatus'>{e.status}</div>
-							</li>
-						))}
-					</ul>
-				</Reveal>
 			</div>
 		</section>
 	)

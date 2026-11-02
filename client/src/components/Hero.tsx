@@ -1,57 +1,106 @@
-import HeroCanvas from './HeroCanvas'
-import Counter from './Counter'
-import { stats } from '../data/content'
-
-// The PDF in public/cv/ is the default; VITE_CV_URL can point to an external copy instead.
-const cvUrl = import.meta.env.VITE_CV_URL || '/cv/Pablo_Ortega_CV.pdf'
+import { useRef, type CSSProperties } from 'react'
+import { stages } from '../data/content'
+import { useStack } from '../hooks/useStack'
 
 export default function Hero() {
-	return (
-		<section className='hero'>
-			<HeroCanvas />
-			<div className='blueprint' style={{ opacity: 0.22 }} />
-			<div className='hero-inner'>
-				<span className='eyebrow'>
-					MENDOZA, ARGENTINA — DISPONIBLE EN REMOTO
-				</span>
-				<h1>
-					Pablo
-					<br />
-					Ortega
-				</h1>
-				<div className='role'>Full-stack Developer &amp; Technical Leader</div>
-				<p className='pitch'>
-					Lidero equipos y construyo productos de software de punta a punta — de
-					un SaaS de price intelligence a aplicaciones que hablan con
-					dispositivos físicos por Bluetooth y NFC. Todo del lado del código, no
-					del hardware.
-				</p>
-				<div className='cta-row'>
-					<a href='#proyectos' className='btn btn-primary'>
-						Ver proyectos
-					</a>
-					<a href='#experiencia' className='btn btn-ghost'>
-						Mi trayectoria
-					</a>
-					<a
-						href={cvUrl}
-						className='btn btn-ghost'
-						target='_blank'
-						rel='noreferrer'
-					>
-						Descargar CV
-					</a>
-				</div>
+	const hero = useRef<HTMLElement>(null)
+	const host = useRef<HTMLDivElement>(null)
+	const canvas = useRef<HTMLCanvasElement>(null)
+	const rows = useRef<HTMLOListElement>(null)
+	const note = useRef<HTMLParagraphElement>(null)
+	const { live, paused, togglePause, focusStage } = useStack({
+		canvas,
+		host,
+		hero,
+		rows,
+		note,
+	})
 
-				<div className='stat-strip'>
-					{stats.map(s => (
-						<div className='stat' key={s.label}>
-							<div className='num'>
-								<Counter value={s.value} suffix={s.suffix} />
-							</div>
-							<div className='label'>{s.label}</div>
+	return (
+		<section className='hero' ref={hero}>
+			<div className='wrap hero-in'>
+				<h1>
+					<span>Pablo </span>
+					<span>Ortega</span>
+				</h1>
+				<p className='role'>
+					Full-stack developer y <mark>tech lead</mark>
+				</p>
+				<div className='hero-cols'>
+					<div className='intro'>
+						<p className='where'>Mendoza, Argentina. Remoto.</p>
+						<p className='pitch'>
+							Llevo productos de la idea a producción, con TypeScript y Python.
+							También formé y lideré equipos de hasta 12 desarrolladores.
+						</p>
+						<div className='cta'>
+							<a className='btn' href='#casos'>
+								Ver mi trabajo
+							</a>
+							<a className='btn alt' href='#contacto'>
+								Escribirme
+							</a>
 						</div>
-					))}
+					</div>
+					<div className={live ? 'stack3d live' : 'stack3d'} ref={host}>
+						<picture>
+							<source
+								media='(max-width: 1100px)'
+								srcSet='/img/stack-numeros.webp'
+							/>
+							<img
+								src='/img/stack-nombres.webp'
+								width={1040}
+								height={1040}
+								alt=''
+								fetchPriority='high'
+							/>
+						</picture>
+						<canvas ref={canvas} aria-hidden='true' />
+						<button
+							className={paused ? 'pause off' : 'pause'}
+							type='button'
+							aria-label={
+								paused ? 'Reanudar la animación' : 'Pausar la animación'
+							}
+							hidden={!live}
+							onClick={togglePause}
+						>
+							<svg className='stop' viewBox='0 0 16 16' aria-hidden='true'>
+								<rect x='3' y='2' width='4' height='12' />
+								<rect x='9' y='2' width='4' height='12' />
+							</svg>
+							<svg className='on' viewBox='0 0 16 16' aria-hidden='true'>
+								<path d='M4 2l10 6-10 6z' />
+							</svg>
+						</button>
+					</div>
+					<div className='cycle'>
+						<p className='cut-title'>
+							Del relevamiento al soporte, con hasta 9 sistemas productivos a
+							cargo a la vez.
+						</p>
+						<ol className='rows' role='list' ref={rows}>
+							{stages.map((stage, i) => (
+								<li
+									key={stage.name}
+									className='stage'
+									style={{ '--c': `var(--l${i + 1})` } as CSSProperties}
+									onMouseEnter={() => focusStage(i)}
+									onMouseLeave={() => focusStage(null)}
+								>
+									<i aria-hidden='true'>{i + 1}</i>
+									<span className='txt'>
+										<b>{stage.name}</b>
+										<span className='what'>{stage.detail}</span>
+									</span>
+								</li>
+							))}
+						</ol>
+						<p className='cut-note' ref={note}>
+							Lo que se aprende en producción vuelve al inicio.
+						</p>
+					</div>
 				</div>
 			</div>
 		</section>

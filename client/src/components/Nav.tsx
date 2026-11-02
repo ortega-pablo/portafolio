@@ -1,27 +1,51 @@
-import ThemeToggleButton from './ThemeToggleButton'
-import { links } from '../data/content'
+import { cvUrl } from '../data/content'
+import { useActiveSection } from '../hooks/useActiveSection'
+
+const sections = [
+	{ href: '#casos', label: 'Casos' },
+	{ href: '#proyectos', label: 'Proyectos' },
+	{ href: '#experiencia', label: 'Experiencia' },
+	{ href: '#stack', label: 'Stack' },
+]
+
+function SectionLinks({ extra = [] }: { extra?: typeof sections }) {
+	const active = useActiveSection()
+	return [...sections, ...extra].map(s => (
+		<a
+			key={s.href}
+			href={s.href}
+			aria-current={s.href === `#${active}` ? 'true' : undefined}
+		>
+			{s.label}
+		</a>
+	))
+}
 
 export default function Nav() {
 	return (
-		<div className='nav'>
-			<div className='nav-inner'>
-				<a href='#top' className='wordmark'>
-					<span className='dot' />
-					PABLO ORTEGA
+		<header className='top'>
+			<div className='wrap top-in'>
+				<a className='mark' href='#contenido'>
+					Pablo Ortega
 				</a>
-				<nav className='nav-links'>
-					<a href='#proyectos'>Proyectos</a>
-					<a href='#experiencia'>Experiencia</a>
-					<a href='#stack'>Stack</a>
-					<a href='#contacto'>Contacto</a>
+				<nav className='links' aria-label='Secciones'>
+					<SectionLinks />
 				</nav>
-				<div className='nav-right'>
-					<ThemeToggleButton />
-					<a className='btn btn-primary' href={`mailto:${links.email}`}>
-						Contactarme
-					</a>
-				</div>
+				<a className='btn alt' href='#contacto'>
+					Escribirme
+				</a>
+				<a className='btn' href={cvUrl} target='_blank' rel='noreferrer'>
+					Descargar CV
+				</a>
 			</div>
-		</div>
+		</header>
+	)
+}
+
+export function BottomNav() {
+	return (
+		<nav className='bottom-nav' aria-label='Secciones'>
+			<SectionLinks extra={[{ href: '#contacto', label: 'Escribirme' }]} />
+		</nav>
 	)
 }

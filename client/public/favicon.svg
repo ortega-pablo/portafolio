@@ -1,13 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-	<rect width="64" height="64" rx="14" fill="#14171b" />
-	<circle cx="47" cy="17" r="4" fill="#e0964f" />
-	<text
-		x="24"
-		y="45"
-		font-family="'Unbounded', 'Arial Black', sans-serif"
-		font-weight="800"
-		font-size="34"
-		fill="#f4e8da"
-		text-anchor="middle"
-	>P</text>
+	<rect width="64" height="64" rx="12" fill="#0a1c18" />
+	<path d="M32 28 9 40l23 12 23-12z" fill="#3fb594" stroke="#0a1c18" stroke-width="2.5" stroke-linejoin="round" />
+	<path d="M32 20 9 32l23 12 23-12z" fill="#ffc23d" stroke="#0a1c18" stroke-width="2.5" stroke-linejoin="round" />
+	<path d="M32 12 9 24l23 12 23-12z" fill="#ff8a2b" stroke="#0a1c18" stroke-width="2.5" stroke-linejoin="round" />
 </svg>

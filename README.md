@@ -1,6 +1,6 @@
 # Portafolio — Pablo Ortega
 
-Portafolio personal. React 19 + TypeScript + Vite + Tailwind CSS v4.
+Portafolio personal. React 19 + TypeScript + Vite, con Three.js para el gráfico del hero, que carga después del texto.
 
 ## Desarrollo local
 

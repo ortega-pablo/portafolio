@@ -1,10 +1,8 @@
-import Nav from './components/Nav'
+import Nav, { BottomNav } from './components/Nav'
 import Hero from './components/Hero'
-import About from './components/About'
-import Proof from './components/Proof'
-import HowISolve from './components/HowISolve'
-import Experience from './components/Experience'
+import Cases from './components/Cases'
 import Projects from './components/Projects'
+import Experience from './components/Experience'
 import Stack from './components/Stack'
 import Education from './components/Education'
 import Contact from './components/Contact'
@@ -12,21 +10,23 @@ import Footer from './components/Footer'
 
 function App() {
 	return (
-		<div id='top'>
+		<>
+			<a className='skip' href='#contenido'>
+				Saltar al contenido
+			</a>
 			<Nav />
-			<main>
+			<main id='contenido'>
 				<Hero />
-				<About />
-				<Proof />
-				<HowISolve />
-				<Experience />
+				<Cases />
 				<Projects />
+				<Experience />
 				<Stack />
 				<Education />
 				<Contact />
 			</main>
 			<Footer />
-		</div>
+			<BottomNav />
+		</>
 	)
 }
 
