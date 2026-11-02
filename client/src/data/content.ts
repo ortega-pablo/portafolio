@@ -42,7 +42,7 @@ export const cases = [
 	},
 	{
 		title: 'Software que le habla a un dispositivo',
-		body: 'Velos controla un dron acuático por Bluetooth con un ESP32 como intermediario. ASP NFC, hecho con el equipo de Incluit, lee tarjetas por puerto serie desde una app de escritorio.',
+		body: 'Velos controla un dron acuático por Bluetooth con un ESP32 como intermediario. ASP NFC lee tarjetas por puerto serie desde una app de escritorio.',
 		tags: 'Bluetooth, NFC, puerto serie',
 	},
 ]
@@ -126,12 +126,12 @@ export const otherSystems = [
 	{
 		name: 'Velos',
 		tag: 'Dron acuático por Bluetooth',
-		body: 'Control de un dron acuático por Bluetooth, con un ESP32 como intermediario. Hecho en solitario.',
+		body: 'Control de un dron acuático por Bluetooth, con un ESP32 como intermediario.',
 	},
 	{
 		name: 'Veco',
 		tag: 'Dron terrestre',
-		body: 'App para tablet que controla un dron terrestre de entrenamiento, con modo sin conexión. Con el equipo de Incluit.',
+		body: 'App para tablet que controla un dron terrestre de entrenamiento, con modo sin conexión. Con mi equipo.',
 	},
 	{
 		name: 'Tienda Plastik',
@@ -141,7 +141,7 @@ export const otherSystems = [
 	{
 		name: 'Vitaance',
 		tag: 'Visión por computadora',
-		body: 'Monitoreo ergonómico en tiempo real. Con el equipo de Incluit.',
+		body: 'Monitoreo ergonómico en tiempo real. Con mi equipo.',
 	},
 	{
 		name: 'Campus Moodle',
@@ -149,9 +149,9 @@ export const otherSystems = [
 		body: 'SSO con Keycloak y OIDC sobre una plataforma SaaS educativa de terceros, en Azure. Salió a producción en la fecha comprometida.',
 	},
 	{
-		name: 'Grupo ZAG',
+		name: 'Sistemas legacy',
 		tag: 'Mantenimiento',
-		body: 'Backoffices y CRM en PHP/Laravel y .NET, y su proveedor de identidad. Fui el único responsable entre 2024 y 2026.',
+		body: 'Backoffices y CRM en PHP/Laravel y .NET, y un proveedor de identidad. Fui responsable de su mantenimiento entre 2024 y 2026.',
 	},
 ]
 
@@ -165,7 +165,7 @@ export const jobs = [
 			'Llegué a tener 9 sistemas productivos a cargo al mismo tiempo.',
 			'Lideré Plan Mi Casa, entregada y en producción sobre AWS (EC2, RDS, ALB).',
 			'Lidero y desarrollo Durrieu, en producción sobre AWS desde mayo de 2026.',
-			'Lideré junto a Consensus la integración de un campus Moodle con SSO, con un servicio en NestJS.',
+			'Lideré la integración de un campus Moodle con SSO, con un servicio en NestJS.',
 		],
 	},
 	{
@@ -183,8 +183,8 @@ export const jobs = [
 		company: 'Tienda Plastik',
 		role: 'Cofundador',
 		bullets: [
-			'Cofundé con mi socia un emprendimiento de modelado e impresión 3D.',
-			'Desarrollé y mantengo en solitario su sistema de cotización, costeo y stock.',
+			'Cofundé un emprendimiento de modelado e impresión 3D.',
+			'Desarrollé y mantengo su sistema de cotización, costeo y stock.',
 		],
 	},
 ]

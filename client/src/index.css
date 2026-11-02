@@ -726,9 +726,10 @@ html:has(.lightbox[open]) {
 	content: '';
 	position: absolute;
 	left: 0;
-	top: 0.68em;
-	width: 7px;
-	height: 3px;
+	top: 0.6em;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
 	background: var(--l4);
 }
 
